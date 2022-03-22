@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  {% include 'components/header.html' %}
+
+  <main class="container py-64">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <div class="rounded box-shadow-1 p-32 d-flex flex-column gap-32 border border-light bg-white">
+          <h1 class="fz-44 fw-regular text-dark text-center m-0">
+            Dados Livres
+          </h1>
+          <p class="text-center fz-21 text-dark m-0">
+            Plataforma livre que permite a catalogação de fontes de dados abertos <br> por meio de colaboração coletiva.
+          </p>
+        </div>
+      </div>
+      <div class="col-12 py-64">
+        <div class="pb-64">
+          <p class="text-center fz-21 text-dark m-0">
+            Encontre as principais categorias de fontes de dados abertos
+          </p>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+          {% for category in categories %}
+          <div class="col p-16">
+            <a href="{{ url_for('data_category_view', category=category[0]) }}" class="category-card">
+              <img src="{{ url_for('static', filename='img/svg/' + category[0] + '.svg') }}" alt="">
+              <p class="m-0 text-dark fz-16 fw-medium">
+                {{ category[1] }}
+              </p>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </main>
+
+  {% include 'components/footer.html' %}
+{% endblock%}

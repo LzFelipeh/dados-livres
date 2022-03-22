@@ -1,0 +1,40 @@
+<div>
+  <div id="backdrop"></div>
+  <div id="menu">
+    <div>
+      <button class="btn p-32" onclick="closeMenu('#menu')">
+        <img src="{{ url_for('static', filename='img/svg/close.svg') }}" alt="">
+      </button>
+    </div>
+  
+    <div class="p-32">
+      <h2 class="text-uppercase text-white fz-26 fw-medium m-0">
+        menu
+      </h2>
+    </div>
+  
+    <hr>
+  
+    <div class="p-32"> 
+      <ul class="d-flex flex-column gap-16 m-0 list-unstyled">
+        <li>
+          <a href="{{ url_for('index') }}" class="link text-white fz-21">Home</a>
+        </li>
+        <li>
+          <a href="{{ url_for('data_source_register') }}" class="link text-white fz-21">Novas fontes</a>
+        </li>
+        <li>
+          <a href="{{ url_for('profile_view') }}" class="link text-white fz-21">Meu perfil</a>
+        </li>
+      </ul>
+    </div>
+  
+    <hr>
+  
+    <div class="p-32">
+      <a href="{{ url_for('logout') }}" class="link text-white fz-21">
+        Sair
+      </a>
+    </div>
+  </div>
+</div>

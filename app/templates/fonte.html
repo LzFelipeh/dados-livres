@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'components/header.html' %}
+
+<main>
+  <div class="container py-32">
+    <div class="box-shadow-1 rounded bg-white p-32">
+      <div class="d-flex justify-content-end gap-3">
+        <a href="{{ url_for('data_source_edit', id=source.id) }}">
+          Editar
+        </a>
+        <a class="link-danger" href="{{ url_for('delete_data_source', id=source.id)}}">
+          Deletar
+        </a>
+      </div>
+      <h1>
+        {{ source.title }}
+      </h1>
+      <p>
+        <span class="fw-bold">
+          Esfera:
+        </span>
+        {{ source.sphere }}
+      </p>
+      <p>
+        <span class="fw-bold">
+          Descrição:
+        </span>
+        {{ source.description }}
+      </p>
+      <a href="{{ source.page_link}}" target="_blank">
+        Visitar página oficial
+      </a>
+    </div>
+
+  </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% with notifications = get_flashed_messages(with_categories=True) %}
+  {% if notifications %}
+  <ul>
+    {% for category, notification in notifications %}
+    <li>
+      {{ notification }}
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endwith %}

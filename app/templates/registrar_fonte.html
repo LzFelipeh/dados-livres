@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'components/header.html' %}
+
+<main class="container py-80">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6">
+      <form action="{{ url_for('data_source_register') }}" method="POST"
+        class="bg-white rounded box-shadow-1 p-32 d-flex flex-column gap-32 border border-light">
+        {{ form.csrf_token }}
+        <div>
+          <h1 class="fz-26 fw-medium ff-inter text-center">
+            Registrar uma nova fonte
+          </h1>
+        </div>
+        <div class="input-field-2">
+          <label for="">
+            Título
+            <span class="is-required">*</span>
+          </label>
+          {{ form.title(placeholder='Digite o título da fonte de dados abertos ', required=True) }}
+        </div>
+        <div class="input-field-2">
+          <label for="">
+            Categoria
+            <span class="is-required">*</span>
+          </label>
+          {{ form.category(required=True) }}
+        </div>
+        <div class="input-field-2">
+          <label for="">
+            Página oficial
+            <span class="is-required">*</span>
+          </label>
+          {{ form.page_link(placeholder='Digite a URL da fonte (https://www.exemplo.com/)', required=True) }}
+        </div>
+        <div class="input-field-2">
+          <label for="">
+            Descrição
+            <span class="is-required">*</span>
+          </label>
+          {{ form.description(placeholder='Digite uma breve descrição sobre a fonte de dados abertos', rows="5", required=True) }}
+        </div>
+        <div class="input-field-2">
+          <label for="">
+            Esfera
+            <span class="is-required">*</span>
+          </label>
+          {{ form.sphere(required=True) }}
+        </div>
+        <div class="input-field-2">
+          <label for="">
+            País
+            <span class="is-required">*</span>
+          </label>
+          {{ form.country(placeholder='Digite o país da fonte de dados abertos', required=True) }}
+        </div>
+        <div class="input-field-2">
+          <label for="">
+            Estado
+            <span class="is-required">*</span>
+          </label>
+          {{ form.state(placeholder='Digite o estado da fonte de dados abertos', required=True) }}
+        </div>
+        <div class="input-field-2">
+          <label for="">
+            Cidade
+            <span class="is-required">*</span>
+          </label>
+          {{ form.city(placeholder='Digite a cidade da fonte de dados abertos', required=True) }}
+        </div>
+        <div class="input-field-2">
+          {{ form.submit(class='bg-red') }}
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

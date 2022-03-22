@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'components/header.html' %}
+<main class="container">
+  <div class="row">
+    <div class="col-12 py-32">
+      <div class="">
+        <a href="{{ url_for('index') }}" class="text-decoration-none text-gray d-flex gap-8">
+          <span class="link">
+            <img src="{{ url_for('static', filename='img/svg/voltar.svg') }}" alt="">
+          </span>
+          voltar
+        </a>
+      </div>
+      <div class="pb-64 d-flex flex-column gap-32">
+        <h1 class="text-center fz-44 text-dark m-0">
+          {{ category[1] }} - Fontes
+        </h1>
+      </div>
+      <div class="d-flex flex-column gap-32">
+        {% for source in data_sources %}
+        <a href="{{ url_for('data_source', id=source.id, category=category[1]) }}" class="bg-white rounded box-shadow-1 p-32">
+          {{source.title}}
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</main>
+{% include 'components/footer.html' %}
+{% endblock %}

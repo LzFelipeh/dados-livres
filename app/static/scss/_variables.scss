@@ -1,0 +1,76 @@
+// color variables definition
+$black:           #030303;
+$white:           #fefefe;
+$snow:            #F9FAFC;
+$light:           #C0CCDA;
+$gray:            #707C8C;
+$dark:            #1F2D3D;
+$red:             #D12424;
+
+$theme-colors: (
+  "black":          $black,
+  "white":          $white,
+  "snow":           $snow,
+  "light":          $light,
+  "gray":           $gray,
+  "dark":           $dark,
+  "red":            $red,
+  "transparent": #fff0,
+) !default;
+
+// spacers variable definition
+$spacer: 1rem;
+$spacers: (
+  "0":  0,
+  "8":  $spacer * 0.5,
+  "12": $spacer * 0.75,
+  "16": $spacer,
+  "18": $spacer * 1.125,
+  "20": $spacer * 1.25,
+  "24": $spacer * 1.5,
+  "25": $spacer * 1.5625,
+  "28": $spacer * 1.75,
+  "32": $spacer * 2,
+  "40": $spacer * 2.5,
+  "56": $spacer * 3.5,
+  "64": $spacer * 4,
+  "80": $spacer * 5,
+) !default;
+
+//Variáveis das fontes
+$font-family-sans-serif: "Inter", sans-serif;
+$font-families: (inter: 'Inter');
+$font-sizes: (
+  12: 12px,
+  13: 13px,
+  14: 14px,
+  16: 16px,
+  21: 21px,
+  26: 26px,
+  44: 44px
+);
+
+$font-weight-thin:        100;
+$font-weight-extra-light: 200;
+$font-weight-light:       300;
+$font-weight-regular:     400;
+$font-weight-medium:      500;
+$font-weight-semi-bold:   600;
+$font-weight-bold:        700;
+$font-weight-extra-bold:  800;
+$font-weight-black:       900;
+
+//edit bootstrap default values
+$btn-focus-width:               0;
+$btn-box-shadow:             none;
+$btn-focus-box-shadow:          0;
+$btn-padding-y:              11px;
+
+$input-box-shadow:           none;
+$input-focus-box-shadow:        0;
+$input-focus-border-color:   none;
+
+$border-radius:               8px;
+
+$modal-backdrop-bg:                 $dark;
+$modal-backdrop-opacity:            .5;
